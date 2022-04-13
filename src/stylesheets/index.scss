@@ -1,5 +1,18 @@
-@use "colors";
+@import "colors";
+
+body {
+  margin: 0;
+}
 
 .App {
-  background-color: beige;
+  background: linear-gradient(45deg, $bg-blue, $bg-pink);
+
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
