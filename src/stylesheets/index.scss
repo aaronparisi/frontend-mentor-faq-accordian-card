@@ -1,8 +1,6 @@
 @import "colors";
-
-body {
-  margin: 0;
-}
+@import "reset";
+@import "faq-card";
 
 .App {
   background: linear-gradient(45deg, $bg-blue, $bg-pink);

@@ -1,8 +1,14 @@
 import React from "react";
+import FAQCard from "./components/FAQCard/FAQCard";
 import "./stylesheets/index.css";
 
 function App() {
-  return <div className="App">Hello from app!</div>;
+  console.log("hello from App!");
+  return (
+    <div className="App">
+      <FAQCard />
+    </div>
+  );
 }
 
 export default App;
