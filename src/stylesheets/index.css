@@ -43,6 +43,33 @@ img {
   width: 75vw;
   background-color: #ffffff;
   border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+}
+.faq-card .faq-graphic-wrapper {
+  position: relative;
+  width: 50%;
+  max-width: none;
+}
+.faq-card .faq-graphic-wrapper .faq-graphic {
+  position: absolute;
+  right: 17%;
+  bottom: 10%;
+  height: 16vh;
+  width: 100%;
+  z-index: 2;
+}
+.faq-card .faq-graphic-wrapper .graphic-background {
+  position: absolute;
+  top: -170px;
+  right: 17%;
+  height: 50vh;
+  width: 100%;
+}
+.faq-card .faq-pane {
+  border: 1px solid green;
+  height: 100%;
+  width: 50%;
 }
 
 .App {
@@ -54,6 +81,13 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.App .at-box {
+  position: absolute;
+  left: 62px;
+  bottom: 275px;
+  height: 130px;
+  z-index: 3;
 }
 
 /*# sourceMappingURL=index.css.map */

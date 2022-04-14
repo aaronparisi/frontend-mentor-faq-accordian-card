@@ -13,4 +13,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  & .at-box {
+    position: absolute;
+    left: 62px;
+    bottom: 275px;
+
+    height: 130px;
+
+    z-index: 3;
+  }
 }

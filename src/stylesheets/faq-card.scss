@@ -12,4 +12,36 @@
   background-color: $white;
 
   border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+
+  & .faq-graphic-wrapper {
+    position: relative;
+    width: 50%;
+    max-width: none;
+
+    & .faq-graphic {
+      position: absolute;
+      right: 17%;
+      bottom: 10%;
+      height: 16vh;
+      width: 100%;
+
+      z-index: 2;
+    }
+
+    & .graphic-background {
+      position: absolute;
+      top: -170px;
+      right: 17%;
+      height: 50vh;
+      width: 100%;
+    }
+  }
+
+  & .faq-pane {
+    border: 1px solid green;
+    height: 100%;
+    width: 50%;
+  }
 }
