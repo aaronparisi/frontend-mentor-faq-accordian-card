@@ -4,16 +4,21 @@ import "./stylesheets/index.css";
 import AtBox from "./images/illustration-box-desktop.svg";
 import styled from "styled-components";
 
-interface StyledDivProps {
+interface AtBoxWrapperProps {
   faqSelected: boolean;
   //src: string;
 }
-const StyledDiv = styled("div")<StyledDivProps>`
-  height: ${({ faqSelected }): string => (faqSelected ? "160px" : "130px")};
-  width: ${({ faqSelected }): string => (faqSelected ? "160px" : "130px")};
-  right: ${({ faqSelected }): string =>
-    faqSelected ? "calc(100% - 35vw + 250px)" : "calc(100% - 35vw + 280px)"};
-  bottom: ${({ faqSelected }): string => (faqSelected ? "14vh" : "12vh")};
+const AtBoxWrapper = styled("div")<AtBoxWrapperProps>`
+  width: ${({ faqSelected }): string => (faqSelected ? "140px" : "130px")};
+  bottom: ${({ faqSelected }): string => (faqSelected ? "11vh" : "12vh")};
+`;
+
+interface AtBoxSpacerProps {
+  faqSelected: boolean;
+}
+
+const AtBoxSpacer = styled("div")<AtBoxSpacerProps>`
+  width: ${({ faqSelected }): string => (faqSelected ? "50%" : "0%")};
 `;
 
 function App() {
@@ -25,9 +30,15 @@ function App() {
     <div className="App">
       <div className="faq-card-wrapper">
         <FAQCard faqSelected={faqSelected} setFaqSelected={setFaqSelected} />
-        <StyledDiv className="at-box" faqSelected={faqSelected}>
-          <img src={AtBox} alt="yellow box with at-sign on it" />
-        </StyledDiv>
+        <AtBoxWrapper className="at-box-wrapper" faqSelected={faqSelected}>
+          <AtBoxSpacer
+            className="at-box-spacer"
+            faqSelected={faqSelected}
+          ></AtBoxSpacer>
+          <div className="at-box-image">
+            <img src={AtBox} alt="yellow box with at-sign on it" />
+          </div>
+        </AtBoxWrapper>
       </div>
     </div>
   );

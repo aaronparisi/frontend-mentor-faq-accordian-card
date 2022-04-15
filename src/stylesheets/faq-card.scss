@@ -3,14 +3,38 @@
 .faq-card-wrapper {
   position: relative;
 
-  & .at-box {
+  & .at-box-wrapper {
     position: absolute;
     border: 1px solid red;
 
     z-index: 3;
 
     transition: bottom 1s ease-in-out, height 1s ease-in-out,
-      width 1s ease-in-out, right 1s ease-in-out;
+      width 1s ease-in-out;
+    right: calc(100% - 35vw + 280px);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    overflow: visible;
+
+    & > div {
+      flex-shrink: 0;
+    }
+
+    & .at-box-spacer {
+      transition: width 1s ease-in-out;
+      height: 100%;
+      //width: 100%;
+      border: 1px solid pink;
+      background: pink;
+    }
+
+    & .at-box-image {
+      width: 100%;
+    }
   }
 
   & .faq-card {
@@ -38,6 +62,7 @@
       align-items: center;
 
       transition: margin-top 1s ease-in-out;
+      right: calc(100% - 35vw);
 
       & .faq-graphic {
         z-index: 2;

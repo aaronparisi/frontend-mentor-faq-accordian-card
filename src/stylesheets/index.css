@@ -37,11 +37,29 @@ img {
 .faq-card-wrapper {
   position: relative;
 }
-.faq-card-wrapper .at-box {
+.faq-card-wrapper .at-box-wrapper {
   position: absolute;
   border: 1px solid red;
   z-index: 3;
-  transition: bottom 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out, right 1s ease-in-out;
+  transition: bottom 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out;
+  right: calc(100% - 35vw + 280px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+.faq-card-wrapper .at-box-wrapper > div {
+  flex-shrink: 0;
+}
+.faq-card-wrapper .at-box-wrapper .at-box-spacer {
+  transition: width 1s ease-in-out;
+  height: 100%;
+  border: 1px solid pink;
+  background: pink;
+}
+.faq-card-wrapper .at-box-wrapper .at-box-image {
+  width: 100%;
 }
 .faq-card-wrapper .faq-card {
   min-width: 630px;
@@ -62,6 +80,7 @@ img {
   justify-content: center;
   align-items: center;
   transition: margin-top 1s ease-in-out;
+  right: calc(100% - 35vw);
 }
 .faq-card-wrapper .faq-card .faq-graphic-wrapper .faq-graphic {
   z-index: 2;

@@ -13,8 +13,6 @@ interface StyledDivProps {
 
 const StyledDiv = styled("div")<StyledDivProps>`
   width: ${({ faqSelected }): string => (faqSelected ? "400px" : "400px")};
-  right: ${({ faqSelected }): string =>
-    faqSelected ? "calc(100% - 35vw)" : "calc(100% - 35vw)"};
   margin-top: ${({ faqSelected }): string => (faqSelected ? "20px" : "0px")};
 `;
 
