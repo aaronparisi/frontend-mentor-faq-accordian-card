@@ -34,11 +34,17 @@ img {
   height: auto;
 }
 
-.faq-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
+.faq-card-wrapper {
+  position: relative;
+}
+.faq-card-wrapper .at-box {
+  position: absolute;
+  border: 1px solid red;
+  z-index: 3;
+  transition: bottom 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out, right 1s ease-in-out;
+}
+.faq-card-wrapper .faq-card {
+  min-width: 630px;
   height: 50vh;
   width: 75vw;
   background-color: #ffffff;
@@ -46,28 +52,32 @@ img {
   overflow: hidden;
   position: relative;
 }
-.faq-card .faq-graphic-wrapper {
-  position: relative;
-  width: 50%;
+.faq-card-wrapper .faq-card .faq-graphic-wrapper {
+  position: absolute;
+  top: 0px;
+  height: 100%;
   max-width: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: margin-top 1s ease-in-out;
 }
-.faq-card .faq-graphic-wrapper .faq-graphic {
-  position: absolute;
-  right: 17%;
-  bottom: 10%;
-  height: 16vh;
-  width: 100%;
+.faq-card-wrapper .faq-card .faq-graphic-wrapper .faq-graphic {
   z-index: 2;
+  border: 1px solid lime;
 }
-.faq-card .faq-graphic-wrapper .graphic-background {
+.faq-card-wrapper .faq-card .faq-graphic-wrapper .graphic-background {
   position: absolute;
-  top: -170px;
-  right: 17%;
+  bottom: 5vh;
   height: 50vh;
   width: 100%;
 }
-.faq-card .faq-pane {
+.faq-card-wrapper .faq-card .faq-pane {
   border: 1px solid green;
+  position: absolute;
+  left: 50%;
+  top: 0px;
   height: 100%;
   width: 50%;
 }
@@ -81,13 +91,6 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.App .at-box {
-  position: absolute;
-  left: 62px;
-  bottom: 275px;
-  height: 130px;
-  z-index: 3;
 }
 
 /*# sourceMappingURL=index.css.map */

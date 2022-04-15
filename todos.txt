@@ -1,0 +1,2 @@
+- animate left hand side on faq selection
+- build faq pane

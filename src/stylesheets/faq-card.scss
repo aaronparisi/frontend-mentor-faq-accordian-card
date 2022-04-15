@@ -1,47 +1,65 @@
 @use "colors";
 
-.faq-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-
-  height: 50vh;
-  width: 75vw;
-
-  background-color: $white;
-
-  border-radius: 25px;
-  overflow: hidden;
+.faq-card-wrapper {
   position: relative;
 
-  & .faq-graphic-wrapper {
-    position: relative;
-    width: 50%;
-    max-width: none;
+  & .at-box {
+    position: absolute;
+    border: 1px solid red;
 
-    & .faq-graphic {
-      position: absolute;
-      right: 17%;
-      bottom: 10%;
-      height: 16vh;
-      width: 100%;
+    z-index: 3;
 
-      z-index: 2;
-    }
-
-    & .graphic-background {
-      position: absolute;
-      top: -170px;
-      right: 17%;
-      height: 50vh;
-      width: 100%;
-    }
+    transition: bottom 1s ease-in-out, height 1s ease-in-out,
+      width 1s ease-in-out, right 1s ease-in-out;
   }
 
-  & .faq-pane {
-    border: 1px solid green;
-    height: 100%;
-    width: 50%;
+  & .faq-card {
+    min-width: 630px;
+
+    height: 50vh;
+    width: 75vw;
+
+    background-color: $white;
+
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+
+    & .faq-graphic-wrapper {
+      position: absolute;
+      top: 0px;
+
+      height: 100%;
+      max-width: none;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      transition: margin-top 1s ease-in-out;
+
+      & .faq-graphic {
+        z-index: 2;
+        border: 1px solid lime;
+      }
+
+      & .graphic-background {
+        position: absolute;
+        bottom: 5vh;
+        height: 50vh;
+        width: 100%;
+      }
+    }
+
+    & .faq-pane {
+      border: 1px solid green;
+      position: absolute;
+      left: 50%;
+      top: 0px;
+
+      height: 100%;
+      width: 50%;
+    }
   }
 }

@@ -1,16 +1,22 @@
-import React, { ReactElement } from "react";
+import React, { Dispatch, ReactElement, SetStateAction } from "react";
 import FAQGraphic from "./FAQGraphic";
 import FAQPane from "./FAQPane";
 
-interface FAQCardProps {}
+interface FAQCardProps {
+  faqSelected: boolean;
+  setFaqSelected: Dispatch<SetStateAction<boolean>>;
+}
 
-const FAQCard: React.FC<FAQCardProps> = (): ReactElement => {
+const FAQCard: React.FC<FAQCardProps> = ({
+  faqSelected,
+  setFaqSelected,
+}): ReactElement => {
   console.log("hello from FAQCard");
 
   return (
     <div className="faq-card">
-      <FAQGraphic />
-      <FAQPane />
+      <FAQGraphic faqSelected={faqSelected} />
+      <FAQPane setFaqSelected={setFaqSelected} />
     </div>
   );
 };
