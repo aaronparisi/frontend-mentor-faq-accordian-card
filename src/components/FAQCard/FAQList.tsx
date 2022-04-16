@@ -12,19 +12,21 @@ const FAQList: React.FC<FAQListProps> = ({
   faqItems,
 }): ReactElement => {
   return (
-    <ul className="faq-list">
-      {faqItems.map((faq: FAQItem) => {
-        return (
-          <li key={faq.question}>
+    <div className="faq-list-wrapper">
+      <h1>FAQ</h1>
+      <ul className="faq-list">
+        {faqItems.map((faq: FAQItem) => {
+          return (
             <FAQItemComponent
+              key={faq.question}
               question={faq.question}
               answer={faq.answer}
               setFaqSelected={setFaqSelected}
             />
-          </li>
-        );
-      })}
-    </ul>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
