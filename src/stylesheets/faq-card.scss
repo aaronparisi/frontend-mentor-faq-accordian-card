@@ -68,9 +68,9 @@
         border: 1px solid lime;
       }
 
-      & .graphic-background {
+      & .graphic-background-wrapper {
         position: absolute;
-        bottom: 5vh;
+        transition: bottom 0.5s ease-out;
         height: 50vh;
         width: 100%;
       }

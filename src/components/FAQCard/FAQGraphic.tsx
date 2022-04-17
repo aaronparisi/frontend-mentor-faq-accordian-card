@@ -18,6 +18,14 @@ const StyledDiv = styled("div")<StyledDivProps>`
     selectedFAQ !== -1 ? "20px" : "0px"};
 `;
 
+interface ImageWrapperProps {
+  selectedFAQ: number;
+}
+
+const ImageWrapper = styled("div")<ImageWrapperProps>`
+  bottom: ${({ selectedFAQ }): string => (selectedFAQ !== -1 ? "0vh" : "-8vh")};
+`;
+
 const FAQGraphic: React.FC<FAQGraphicProps> = ({
   selectedFAQ,
 }): ReactElement => {
@@ -28,7 +36,12 @@ const FAQGraphic: React.FC<FAQGraphicProps> = ({
       <div className="faq-graphic">
         <img src={GraphicImage} className="graphic-image" />
       </div>
-      <img src={GraphicBG} className="graphic-background" />
+      <ImageWrapper
+        selectedFAQ={selectedFAQ}
+        className="graphic-background-wrapper"
+      >
+        <img src={GraphicBG} className="graphic-background" />
+      </ImageWrapper>
     </StyledDiv>
   );
 };

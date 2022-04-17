@@ -86,9 +86,9 @@ img {
   z-index: 2;
   border: 1px solid lime;
 }
-.faq-card-wrapper .faq-card .faq-graphic-wrapper .graphic-background {
+.faq-card-wrapper .faq-card .faq-graphic-wrapper .graphic-background-wrapper {
   position: absolute;
-  bottom: 5vh;
+  transition: bottom 0.5s ease-out;
   height: 50vh;
   width: 100%;
 }
