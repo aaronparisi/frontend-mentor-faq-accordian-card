@@ -6,64 +6,82 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 interface FAQItemComponentProps {
   question: string;
   answer: string;
-  setFaqSelected: Dispatch<SetStateAction<boolean>>;
+  selectedFAQ: number;
+  setSelectedFAQ: Dispatch<SetStateAction<number>>;
+  thisIdx: number;
 }
 
 interface QuestionProps {
-  isSelected: boolean;
+  selectedFAQ: number;
+  thisIdx: number;
 }
 
 const Question = styled("div")<QuestionProps>`
-  font-weight: ${({ isSelected }): string => (isSelected ? "bold" : "normal")};
+  background-color: ${({ selectedFAQ, thisIdx }): string =>
+    selectedFAQ === thisIdx ? `${colors.mediumorange}` : ``};
 `;
 
-interface AnswerProps {
-  isSelected: boolean;
+interface AnswerWrapperProps {
+  selectedFAQ: number;
+  thisIdx: number;
 }
 
-const Answer = styled("div")<AnswerProps>`
-  display: ${({ isSelected }): string => (isSelected ? "block" : "none")};
+const AnswerWrapper = styled("p")<AnswerWrapperProps>`
+  height: ${({ selectedFAQ, thisIdx }): string =>
+    selectedFAQ === thisIdx ? "100px" : "0px"};
 `;
 
 interface StyledFAQItemProps {
-  isSelected: boolean;
+  selectedFAQ: number;
+  thisIdx: number;
 }
 
 const StyledFAQItem = styled("li")<StyledFAQItemProps>`
   &:hover ${Question} {
-    color: ${({ isSelected }): string => (isSelected ? "black" : "green")};
+    background-color: ${({ selectedFAQ, thisIdx }): string =>
+      selectedFAQ === thisIdx
+        ? `${colors.mediumorange}`
+        : `${colors.lightorange}`};
   }
 `;
 
 const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
   question,
   answer,
-  setFaqSelected,
+  selectedFAQ,
+  setSelectedFAQ,
+  thisIdx,
 }): ReactElement => {
-  const [isSelected, setIsSelected] = useState<boolean>(false);
-
   const handleClick = (): void => {
-    setIsSelected(!isSelected);
-    setFaqSelected((value: React.SetStateAction<boolean>) => !value);
+    setSelectedFAQ(selectedFAQ === thisIdx ? -1 : thisIdx);
   };
 
   return (
     <StyledFAQItem
-      isSelected={isSelected}
+      selectedFAQ={selectedFAQ}
+      thisIdx={thisIdx}
       className="faq-item-component"
       onClick={() => handleClick()}
     >
-      <Question className="question" isSelected={isSelected}>
+      <Question
+        className="question"
+        selectedFAQ={selectedFAQ}
+        thisIdx={thisIdx}
+      >
         {question}
       </Question>
-      <Answer className="answer" isSelected={isSelected}>
-        {answer}
-      </Answer>
+      <AnswerWrapper
+        className="answer-wrapper"
+        selectedFAQ={selectedFAQ}
+        thisIdx={thisIdx}
+      >
+        <div className="answer">{answer}</div>
+      </AnswerWrapper>
       <MdKeyboardArrowDown
         className="open-close-arrow"
         style={{
           color: colors.orange,
-          transform: isSelected ? "rotate(180deg)" : "none",
+          transform: selectedFAQ === thisIdx ? "scaleY(-1)" : "none",
         }}
       />
     </StyledFAQItem>

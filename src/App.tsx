@@ -5,35 +5,36 @@ import AtBox from "./images/illustration-box-desktop.svg";
 import styled from "styled-components";
 
 interface AtBoxWrapperProps {
-  faqSelected: boolean;
+  selectedFAQ: number;
   //src: string;
 }
 const AtBoxWrapper = styled("div")<AtBoxWrapperProps>`
-  width: ${({ faqSelected }): string => (faqSelected ? "140px" : "130px")};
-  bottom: ${({ faqSelected }): string => (faqSelected ? "11vh" : "12vh")};
+  width: ${({ selectedFAQ }): string =>
+    selectedFAQ != -1 ? "140px" : "130px"};
+  bottom: ${({ selectedFAQ }): string => (selectedFAQ != -1 ? "11vh" : "12vh")};
 `;
 
 interface AtBoxSpacerProps {
-  faqSelected: boolean;
+  selectedFAQ: number;
 }
 
 const AtBoxSpacer = styled("div")<AtBoxSpacerProps>`
-  width: ${({ faqSelected }): string => (faqSelected ? "50%" : "0%")};
+  width: ${({ selectedFAQ }): string => (selectedFAQ != -1 ? "50%" : "0%")};
 `;
 
 function App() {
   console.log("hello from App!");
 
-  const [faqSelected, setFaqSelected] = useState<boolean>(false);
+  const [selectedFAQ, setSelectedFAQ] = useState<number>(-1);
 
   return (
     <div className="App">
       <div className="faq-card-wrapper">
-        <FAQCard faqSelected={faqSelected} setFaqSelected={setFaqSelected} />
-        <AtBoxWrapper className="at-box-wrapper" faqSelected={faqSelected}>
+        <FAQCard selectedFAQ={selectedFAQ} setSelectedFAQ={setSelectedFAQ} />
+        <AtBoxWrapper className="at-box-wrapper" selectedFAQ={selectedFAQ}>
           <AtBoxSpacer
             className="at-box-spacer"
-            faqSelected={faqSelected}
+            selectedFAQ={selectedFAQ}
           ></AtBoxSpacer>
           <div className="at-box-image">
             <img src={AtBox} alt="yellow box with at-sign on it" />

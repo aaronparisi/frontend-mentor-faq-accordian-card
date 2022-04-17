@@ -3,8 +3,8 @@ import FAQGraphic from "./FAQGraphic";
 import FAQList from "./FAQList";
 
 interface FAQCardProps {
-  faqSelected: boolean;
-  setFaqSelected: Dispatch<SetStateAction<boolean>>;
+  selectedFAQ: number;
+  setSelectedFAQ: Dispatch<SetStateAction<number>>;
 }
 
 export interface FAQItem {
@@ -35,15 +35,19 @@ const FAQItems: FAQItem[] = [
 ];
 
 const FAQCard: React.FC<FAQCardProps> = ({
-  faqSelected,
-  setFaqSelected,
+  selectedFAQ,
+  setSelectedFAQ,
 }): ReactElement => {
   console.log("hello from FAQCard");
 
   return (
     <div className="faq-card">
-      <FAQGraphic faqSelected={faqSelected} />
-      <FAQList setFaqSelected={setFaqSelected} faqItems={FAQItems} />
+      <FAQGraphic selectedFAQ={selectedFAQ} />
+      <FAQList
+        selectedFAQ={selectedFAQ}
+        setSelectedFAQ={setSelectedFAQ}
+        faqItems={FAQItems}
+      />
     </div>
   );
 };

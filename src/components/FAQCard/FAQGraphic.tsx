@@ -4,25 +4,27 @@ import GraphicBG from "../../images/bg-pattern-desktop.svg";
 import styled from "styled-components";
 
 interface FAQGraphicProps {
-  faqSelected: boolean;
+  selectedFAQ: number;
 }
 
 interface StyledDivProps {
-  faqSelected: boolean;
+  selectedFAQ: number;
 }
 
 const StyledDiv = styled("div")<StyledDivProps>`
-  width: ${({ faqSelected }): string => (faqSelected ? "400px" : "400px")};
-  margin-top: ${({ faqSelected }): string => (faqSelected ? "20px" : "0px")};
+  width: ${({ selectedFAQ }): string =>
+    selectedFAQ !== -1 ? "400px" : "400px"};
+  margin-top: ${({ selectedFAQ }): string =>
+    selectedFAQ !== -1 ? "20px" : "0px"};
 `;
 
 const FAQGraphic: React.FC<FAQGraphicProps> = ({
-  faqSelected,
+  selectedFAQ,
 }): ReactElement => {
   console.log("hello from FAQGraphic!");
 
   return (
-    <StyledDiv className="faq-graphic-wrapper" faqSelected={faqSelected}>
+    <StyledDiv className="faq-graphic-wrapper" selectedFAQ={selectedFAQ}>
       <div className="faq-graphic">
         <img src={GraphicImage} className="graphic-image" />
       </div>
