@@ -9,8 +9,7 @@
 
     z-index: 3;
 
-    transition: bottom 1s ease-in-out, height 1s ease-in-out,
-      width 1s ease-in-out;
+    transition: bottom 0.5s ease-out, height 0.5s ease-out, width 0.5s ease-out;
     right: calc(100% - 35vw + 280px);
 
     display: flex;
@@ -25,7 +24,7 @@
     }
 
     & .at-box-spacer {
-      transition: width 1s ease-in-out;
+      transition: width 0.5s ease-out;
       height: 100%;
       //width: 100%;
       border: 1px solid pink;
@@ -61,7 +60,7 @@
       justify-content: center;
       align-items: center;
 
-      transition: margin-top 1s ease-in-out;
+      transition: margin-top 0.5s ease-out;
       right: calc(100% - 35vw);
 
       & .faq-graphic {
@@ -111,27 +110,21 @@
           position: relative;
           overflow: scroll;
 
-          &:first-child {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-          }
-
-          &:last-child {
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-          }
-
           & .question {
             height: 100%;
             padding: 10px 5px 10px 15px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
           }
 
           & .answer-wrapper {
             transition: height 0.5s ease-out;
             z-index: 1;
+            background: $lightlightorange;
 
             & .answer {
-              padding: 5px;
+              padding: 10px 20px;
+              font-style: italic;
             }
           }
 
