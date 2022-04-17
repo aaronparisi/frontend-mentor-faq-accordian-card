@@ -70,7 +70,14 @@ const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
         selectedFAQ={selectedFAQ}
         thisIdx={thisIdx}
       >
-        {question}
+        <div className="question-text">{question}</div>
+        <MdKeyboardArrowDown
+          className="open-close-arrow"
+          style={{
+            color: colors.orange,
+            transform: selectedFAQ === thisIdx ? "scaleY(-1)" : "none",
+          }}
+        />
       </Question>
       <AnswerWrapper
         className="answer-wrapper"
@@ -79,13 +86,6 @@ const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
       >
         <div className="answer">{answer}</div>
       </AnswerWrapper>
-      <MdKeyboardArrowDown
-        className="open-close-arrow"
-        style={{
-          color: colors.orange,
-          transform: selectedFAQ === thisIdx ? "scaleY(-1)" : "none",
-        }}
-      />
     </StyledFAQItem>
   );
 };
