@@ -19,6 +19,8 @@ interface QuestionProps {
 const Question = styled("div")<QuestionProps>`
   background-color: ${({ selectedFAQ, thisIdx }): string =>
     selectedFAQ === thisIdx ? `${colors.mediumorange}` : ``};
+  transition: ${({ selectedFAQ, thisIdx }): string =>
+    selectedFAQ === thisIdx ? "background-color .5s ease-out" : ""};
 `;
 
 interface AnswerWrapperProps {
