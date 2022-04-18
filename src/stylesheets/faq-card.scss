@@ -12,7 +12,7 @@
     z-index: 3;
 
     transition: bottom 0.5s ease-out, height 0.5s ease-out, width 0.5s ease-out;
-    right: calc(100% - 35vw + 280px);
+    right: calc(123% - 60vw + 430px);
 
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@
       align-items: center;
 
       transition: margin-top 0.5s ease-out;
-      right: calc(100% - 35vw);
+      right: calc(90% - 24vw);
 
       & .faq-graphic {
         z-index: 2;
