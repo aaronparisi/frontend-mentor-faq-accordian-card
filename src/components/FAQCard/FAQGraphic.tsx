@@ -40,7 +40,11 @@ const FAQGraphic: React.FC<FAQGraphicProps> = ({
         selectedFAQ={selectedFAQ}
         className="graphic-background-wrapper"
       >
-        <img src={GraphicBG} className="graphic-background" />
+        <img
+          src={GraphicBG}
+          className="graphic-background"
+          style={{ filter: selectedFAQ !== -1 ? "none" : "blur(2px)" }}
+        />
       </ImageWrapper>
     </StyledDiv>
   );

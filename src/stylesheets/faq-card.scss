@@ -2,6 +2,8 @@
 
 .faq-card-wrapper {
   position: relative;
+  border-radius: 25px;
+  box-shadow: 0px 17px 35px $shadow-blue;
 
   & .at-box-wrapper {
     position: absolute;
@@ -73,6 +75,10 @@
         transition: bottom 0.5s ease-out;
         height: 50vh;
         width: 100%;
+
+        & .graphic-background {
+          transition: filter 0.5s ease-out;
+        }
       }
     }
 
