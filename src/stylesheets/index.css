@@ -41,7 +41,7 @@ img {
 }
 .faq-card-wrapper .at-box-wrapper {
   position: absolute;
-  border: 1px solid red;
+  border-color: red;
   z-index: 3;
   transition: bottom 0.5s ease-out, height 0.5s ease-out, width 0.5s ease-out;
   right: calc(123% - 60vw + 430px);
@@ -57,7 +57,7 @@ img {
 .faq-card-wrapper .at-box-wrapper .at-box-spacer {
   transition: width 0.5s ease-out;
   height: 100%;
-  border: 1px solid pink;
+  border-color: pink;
   background: pink;
 }
 .faq-card-wrapper .at-box-wrapper .at-box-image {
@@ -86,7 +86,7 @@ img {
 }
 .faq-card-wrapper .faq-card .faq-graphic-wrapper .faq-graphic {
   z-index: 2;
-  border: 1px solid lime;
+  border-color: lime;
 }
 .faq-card-wrapper .faq-card .faq-graphic-wrapper .graphic-background-wrapper {
   position: absolute;
@@ -137,11 +137,11 @@ img {
 }
 .faq-card-wrapper .faq-card .faq-list-wrapper .faq-list .faq-item-component .question .question-text {
   flex-basis: 85%;
-  border: 1px solid green;
+  border-color: green;
 }
 .faq-card-wrapper .faq-card .faq-list-wrapper .faq-list .faq-item-component .question .open-close-arrow {
   flex-basis: 10%;
-  border: 1px solid orange;
+  border-color: orange;
   transition: transform 0.25s ease-out;
 }
 .faq-card-wrapper .faq-card .faq-list-wrapper .faq-list .faq-item-component .answer-wrapper {

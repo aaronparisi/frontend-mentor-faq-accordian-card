@@ -7,7 +7,8 @@
 
   & .at-box-wrapper {
     position: absolute;
-    border: 1px solid red;
+    //border: 1px solid red;
+    border-color: red;
 
     z-index: 3;
 
@@ -29,7 +30,8 @@
       transition: width 0.5s ease-out;
       height: 100%;
       //width: 100%;
-      border: 1px solid pink;
+      //border: 1px solid pink;
+      border-color: pink;
       background: pink;
     }
 
@@ -67,7 +69,8 @@
 
       & .faq-graphic {
         z-index: 2;
-        border: 1px solid lime;
+        //border: 1px solid lime;
+        border-color: lime;
       }
 
       & .graphic-background-wrapper {
@@ -129,12 +132,14 @@
 
             & .question-text {
               flex-basis: 85%;
-              border: 1px solid green;
+              //border: 1px solid green;
+              border-color: green;
             }
 
             & .open-close-arrow {
               flex-basis: 10%;
-              border: 1px solid orange;
+              //border: 1px solid orange;
+              border-color: orange;
               transition: transform 0.25s ease-out;
             }
           }

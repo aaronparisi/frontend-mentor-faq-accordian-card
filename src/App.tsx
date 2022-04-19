@@ -23,8 +23,6 @@ const AtBoxSpacer = styled("div")<AtBoxSpacerProps>`
 `;
 
 function App() {
-  console.log("hello from App!");
-
   const [selectedFAQ, setSelectedFAQ] = useState<number>(-1);
 
   const handleFAQClick = (clickedIdx: number): void => {
