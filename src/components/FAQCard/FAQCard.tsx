@@ -4,7 +4,7 @@ import FAQList from "./FAQList";
 
 interface FAQCardProps {
   selectedFAQ: number;
-  setSelectedFAQ: Dispatch<SetStateAction<number>>;
+  handleFAQClick: (clickdIdx: number) => void;
 }
 
 export interface FAQItem {
@@ -36,7 +36,7 @@ const FAQItems: FAQItem[] = [
 
 const FAQCard: React.FC<FAQCardProps> = ({
   selectedFAQ,
-  setSelectedFAQ,
+  handleFAQClick,
 }): ReactElement => {
   console.log("hello from FAQCard");
 
@@ -45,7 +45,7 @@ const FAQCard: React.FC<FAQCardProps> = ({
       <FAQGraphic selectedFAQ={selectedFAQ} />
       <FAQList
         selectedFAQ={selectedFAQ}
-        setSelectedFAQ={setSelectedFAQ}
+        handleFAQClick={handleFAQClick}
         faqItems={FAQItems}
       />
     </div>

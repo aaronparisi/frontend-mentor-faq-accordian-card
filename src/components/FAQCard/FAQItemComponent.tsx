@@ -7,7 +7,7 @@ interface FAQItemComponentProps {
   question: string;
   answer: string;
   selectedFAQ: number;
-  setSelectedFAQ: Dispatch<SetStateAction<number>>;
+  handleFAQClick: (clickedIdx: number) => void;
   thisIdx: number;
 }
 
@@ -51,11 +51,11 @@ const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
   question,
   answer,
   selectedFAQ,
-  setSelectedFAQ,
+  handleFAQClick,
   thisIdx,
 }): ReactElement => {
-  const handleClick = (): void => {
-    setSelectedFAQ(selectedFAQ === thisIdx ? -1 : thisIdx);
+  const callHandleClick = (): void => {
+    handleFAQClick(selectedFAQ === thisIdx ? -1 : thisIdx);
   };
 
   return (
@@ -63,7 +63,7 @@ const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
       selectedFAQ={selectedFAQ}
       thisIdx={thisIdx}
       className="faq-item-component"
-      onClick={() => handleClick()}
+      onClick={() => callHandleClick()}
     >
       <Question
         className="question"

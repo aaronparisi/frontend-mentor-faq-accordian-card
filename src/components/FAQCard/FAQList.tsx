@@ -4,13 +4,13 @@ import FAQItemComponent from "./FAQItemComponent";
 
 interface FAQListProps {
   selectedFAQ: number;
-  setSelectedFAQ: Dispatch<SetStateAction<number>>;
+  handleFAQClick: (clickedIdx: number) => void;
   faqItems: FAQItem[];
 }
 
 const FAQList: React.FC<FAQListProps> = ({
   selectedFAQ,
-  setSelectedFAQ,
+  handleFAQClick,
   faqItems,
 }): ReactElement => {
   return (
@@ -24,7 +24,7 @@ const FAQList: React.FC<FAQListProps> = ({
               question={faq.question}
               answer={faq.answer}
               selectedFAQ={selectedFAQ}
-              setSelectedFAQ={setSelectedFAQ}
+              handleFAQClick={handleFAQClick}
               thisIdx={idx}
             />
           );

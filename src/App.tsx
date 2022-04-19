@@ -27,10 +27,14 @@ function App() {
 
   const [selectedFAQ, setSelectedFAQ] = useState<number>(-1);
 
+  const handleFAQClick = (clickedIdx: number): void => {
+    setSelectedFAQ(clickedIdx);
+  };
+
   return (
     <div className="App">
       <div className="faq-card-wrapper">
-        <FAQCard selectedFAQ={selectedFAQ} setSelectedFAQ={setSelectedFAQ} />
+        <FAQCard selectedFAQ={selectedFAQ} handleFAQClick={handleFAQClick} />
         <AtBoxWrapper className="at-box-wrapper" selectedFAQ={selectedFAQ}>
           <AtBoxSpacer
             className="at-box-spacer"
