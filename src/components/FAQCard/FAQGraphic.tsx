@@ -1,7 +1,8 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useContext } from "react";
 import GraphicImage from "../../images/illustration-woman-online-desktop.svg";
 import GraphicBG from "../../images/bg-pattern-desktop.svg";
 import styled from "styled-components";
+import BorderContext from "../../borderContext";
 
 interface FAQGraphicProps {
   selectedFAQ: number;
@@ -29,11 +30,14 @@ const ImageWrapper = styled("div")<ImageWrapperProps>`
 const FAQGraphic: React.FC<FAQGraphicProps> = ({
   selectedFAQ,
 }): ReactElement => {
-  console.log("hello from FAQGraphic!");
+  const borderContextInfo = useContext(BorderContext);
 
   return (
     <StyledDiv className="faq-graphic-wrapper" selectedFAQ={selectedFAQ}>
-      <div className="faq-graphic">
+      <div
+        className="faq-graphic"
+        style={{ borderWidth: borderContextInfo.showBorders ? "1px" : "0px" }}
+      >
         <img src={GraphicImage} className="graphic-image" />
       </div>
       <ImageWrapper

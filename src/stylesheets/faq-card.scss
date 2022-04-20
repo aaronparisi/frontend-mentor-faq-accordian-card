@@ -9,6 +9,7 @@
     position: absolute;
     //border: 1px solid red;
     border-color: red;
+    border-style: solid;
 
     z-index: 3;
 
@@ -32,6 +33,7 @@
       //width: 100%;
       //border: 1px solid pink;
       border-color: pink;
+      border-style: solid;
       background: pink;
     }
 
@@ -71,6 +73,7 @@
         z-index: 2;
         //border: 1px solid lime;
         border-color: lime;
+        border-style: solid;
       }
 
       & .graphic-background-wrapper {
@@ -134,12 +137,14 @@
               flex-basis: 85%;
               //border: 1px solid green;
               border-color: green;
+              border-style: solid;
             }
 
             & .open-close-arrow {
               flex-basis: 10%;
               //border: 1px solid orange;
               border-color: orange;
+              border-style: solid;
               transition: transform 0.25s ease-out;
             }
           }

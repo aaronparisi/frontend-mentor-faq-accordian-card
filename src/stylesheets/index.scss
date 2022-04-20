@@ -14,5 +14,27 @@
   justify-content: center;
   align-items: center;
 
+  position: relative;
+
   //position: relative;
+  & .border-toggle-button {
+    font-family: sans-serif;
+    font-size: 12px;
+    padding: 5px 3px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    width: 100px;
+
+    border-radius: 10px;
+    background: white;
+    box-shadow: none;
+    border: none;
+
+    &:hover {
+      background-color: $lightorange;
+      cursor: pointer;
+    }
+  }
 }

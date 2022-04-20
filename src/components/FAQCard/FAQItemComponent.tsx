@@ -1,7 +1,14 @@
-import React, { Dispatch, SetStateAction, ReactElement, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  ReactElement,
+  useState,
+  useContext,
+} from "react";
 import styled from "styled-components";
 import colors from "../../stylesheets/_export.scss";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import BorderContext from "../../borderContext";
 
 interface FAQItemComponentProps {
   question: string;
@@ -28,7 +35,7 @@ interface AnswerWrapperProps {
   thisIdx: number;
 }
 
-const AnswerWrapper = styled("p")<AnswerWrapperProps>`
+const AnswerWrapper = styled("div")<AnswerWrapperProps>`
   height: ${({ selectedFAQ, thisIdx }): string =>
     selectedFAQ === thisIdx ? "100px" : "0px"};
 `;
@@ -57,6 +64,7 @@ const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
   const callHandleClick = (): void => {
     handleFAQClick(selectedFAQ === thisIdx ? -1 : thisIdx);
   };
+  const borderContextInfo = useContext(BorderContext);
 
   return (
     <StyledFAQItem
@@ -70,12 +78,18 @@ const FAQItemComponent: React.FC<FAQItemComponentProps> = ({
         selectedFAQ={selectedFAQ}
         thisIdx={thisIdx}
       >
-        <div className="question-text">{question}</div>
+        <div
+          className="question-text"
+          style={{ borderWidth: borderContextInfo.showBorders ? "1px" : "0px" }}
+        >
+          {question}
+        </div>
         <MdKeyboardArrowDown
           className="open-close-arrow"
           style={{
             color: colors.orange,
             transform: selectedFAQ === thisIdx ? "scaleY(-1)" : "none",
+            borderWidth: borderContextInfo.showBorders ? "1px" : "0px",
           }}
         />
       </Question>

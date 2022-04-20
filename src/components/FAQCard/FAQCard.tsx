@@ -38,8 +38,6 @@ const FAQCard: React.FC<FAQCardProps> = ({
   selectedFAQ,
   handleFAQClick,
 }): ReactElement => {
-  console.log("hello from FAQCard");
-
   return (
     <div className="faq-card">
       <FAQGraphic selectedFAQ={selectedFAQ} />
